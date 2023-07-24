@@ -245,6 +245,7 @@ switch (sortingAlgorithm) {
 // Sudoku
 
 // ===============
+// Think why we are not able to use async/await in forEach()
 // movements.forEach((element) => {
 // 	this.#show(arr, "before-swapping");
 // 	// swapping elements
