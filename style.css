@@ -1,0 +1,42 @@
+body {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    margin: 0;
+    /* background-color: #f2f2f2; */
+    background: linear-gradient(to top right, rgb(150, 255, 97), rgb(195, 255, 165));
+}
+
+.container {
+    width: 800px;
+    height: 400px;
+    display: flex;
+    justify-content: center;
+    align-items: flex-end;
+    background-color: #c3ff00;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+}
+
+.bar {
+    /* By default height of bars for initially proceed with the project */
+    /* height: 300px; */
+
+    /* height should be in between 0 to 400px */
+    width: 20px;
+    margin: 0 2px;
+    background-color: #4287f5;
+    transition: height 0.2s;
+}
+
+.Sortedcontainer {
+    width: 800px;
+    height: 400px;
+    display: flex;
+    justify-content: center;
+    align-items: flex-end;
+    background-color: #fff;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+}
