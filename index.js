@@ -1,7 +1,10 @@
 const container = document.querySelector(".container");
 const startBtn = document.querySelector("#start-btn");
+const setBtn = document.querySelector("#set-btn");
 const resetBtn = document.querySelector("#reset-btn");
-const selectAlgoForm = document.querySelector("#selectAlgoForm");
+const selectAlgoForm = document.querySelector(".selectAlgoForm");
+const secondsRange = document.querySelector("#seconds");
+const arraySizeRange = document.querySelector("#arraySize");
 
 class SortingVisualizer {
 	static #setBarElement = function (height, color) {
@@ -263,14 +266,14 @@ class SortingVisualizer {
 }
 
 let arr = [];
-resetBtn.addEventListener("click", (event) => {
-	// Enabling the selectAlgoForm section
-	selectAlgoForm.classList.remove("hidden");
-
+setBtn.addEventListener("click", (event) => {
 	arr = [];
 	// do i need to set preventDefault() function ?  When it is needed ? I think it is needed when we click on button and it goes to another link or url changes.
-	for (let i = 1; i < 40; i++) {
-		const randomInteger = Math.trunc(Math.random() * 350) + 50; // Between 50 & 400(excluding)
+	const arraySize = arraySizeRange.value;
+	console.log(`Array Size: ${arraySize}`);
+
+	for (let i = 1; i < arraySize; i++) {
+		const randomInteger = Math.trunc(Math.random() * (520 - 50)) + 50; // Between 50 & 580(excluding)
 		// const randomInteger = Math.trunc(Math.random() * 400) ; // Between 0 & 400(excluding)
 		// Math.random() ===> returns 0 to 1(excluding)
 		// console.log(randomInteger);
@@ -278,6 +281,17 @@ resetBtn.addEventListener("click", (event) => {
 	}
 	SortingVisualizer.show(arr);
 	console.log(arr);
+});
+
+resetBtn.addEventListener("click", (event) => {
+	resetBtn.classList.add("hidden");
+	setBtn.classList.remove("hidden");
+
+	// Enabling the selectAlgoForm section
+	selectAlgoForm.classList.remove("hidden");
+
+	arr = [];
+	container.innerHTML = "";
 });
 
 startBtn.addEventListener("click", (event) => {
@@ -301,13 +315,16 @@ startBtn.addEventListener("click", (event) => {
 		alert("Set the Array Elements before applying any sorting Algorithm");
 	} else {
 		// Disabling the start-btn and sortingAlgorithm option element(select element)
-		selectAlgoForm.classList.add("hidden");
+		selectAlgoForm.classList.add("hidden"); // 👈 Why this is not working ???
 
 		// Disabling the set and reset array elements btn ===> so that when algorithm is working, this btn shouldn't have to work.
-		resetBtn.classList.add("hidden");
+		setBtn.classList.add("hidden");
 
+		const seconds = secondsRange.value;
+		// const seconds = -10; // imp: Does negative value of seconds affects ?  Ans: If negative value passed to the setTimeout() function then it will take it as 0 milliseconds. so, minimum(least) value of setTimeout() function is 0 milliseconds.
 		console.log(sortingAlgorithm);
-		const seconds = 0;
+		console.log(seconds);
+
 		switch (sortingAlgorithm) {
 			case "bubbleSort":
 				console.log("Bubble sort Algorithm started");
@@ -343,7 +360,7 @@ startBtn.addEventListener("click", (event) => {
 			// We don't have to do anything
 		}
 
-		// imp: Don't forget that all sorting algorithm is working as asynchronously. That's why ==> This below resetbtn (adding and removing "hidden" class doesn't affect that much.) 👇👇👇
+		// imp: Don't forget that all sorting algorithm is working as asynchronously. That's why ==> This below resetbtn (adding and removing "hidden" class doesn't affect that much.) 👇👇👇 That's why i have used promise concept that resetbtn will be shown as promise will be fullfilled!
 		// Enabling set and reset array elements btn
 		// resetBtn.classList.remove("hidden");
 	}
