@@ -10,4 +10,4 @@ Live Project Link 👉 https://sorting-visualizer-algo.netlify.app/
 
 Go and check Out this Project 🤩.
 
-I will add music(tune) 🎶 which play during sorting.
+I will add music(tune) 🎶 which will play during sorting.
