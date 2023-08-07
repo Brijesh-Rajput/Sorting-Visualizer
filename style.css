@@ -1,16 +1,46 @@
-body {
+.header {
     display: flex;
     align-items: center;
     justify-content: center;
-    height: 100vh;
+    padding: 10px 20px;
+    background: linear-gradient(to top right, rgb(150, 255, 97), rgb(195, 255, 165));
+    color: black;
+}
+
+.logo img {
+    width: 40px;
+    /* Adjust the width as needed */
+    height: auto;
+}
+
+.header-text {
+    margin-left: 10px;
+}
+
+.header-text h1 {
+    margin: 0;
+    font-size: 24px;
+}
+
+.header-text p {
+    margin: 0;
+    font-size: 16px;
+}
+
+#main-Content {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    /* height: 100vh; */
     margin: 0;
     /* background-color: #f2f2f2; */
     background: linear-gradient(to top right, rgb(150, 255, 97), rgb(195, 255, 165));
+    flex-direction: column;
 }
 
 .container {
     width: 800px;
-    height: 400px;
+    height: 580px;
     display: flex;
     justify-content: center;
     align-items: flex-end;
@@ -30,13 +60,27 @@ body {
     transition: height 0.2s;
 }
 
-.Sortedcontainer {
-    width: 800px;
-    height: 400px;
+.hidden {
+    display: none;
+}
+
+.manipulation-Section {
     display: flex;
+    align-items: center;
     justify-content: center;
-    align-items: flex-end;
-    background-color: #fffdfd;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-    padding: 20px;
+    padding: 10px 20px;
+    background: linear-gradient(to top right, rgb(150, 255, 97), rgb(195, 255, 165));
+    color: #fff;
+    column-gap: 40px;
+}
+
+.selectAlgoForm {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    /* height: 100vh; */
+    margin: 0;
+    /* background-color: #f2f2f2; */
+    flex-direction: row;
+    column-gap: 40px;
 }

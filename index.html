@@ -10,11 +10,44 @@
 
     <!-- Take array as an input -->
     <!-- Select which sorting visualizer you want -->
-    <!-- How to do comparison between two sorting visualizer ?? on the same window AND execute two sorting algorithm paralelly -->
+    <!-- How to do comparison between two sorting visualizer ? on the same window AND execute two sorting algorithm paralelly -->
     <!-- What will be the maximum bars and what will be maximum & minimum height so that it will be visually perfectly -->
+    <header class="header">
+        <div class="logo">
+            <img src="./logo.png" alt="Logo">
+        </div>
+        <div class="header-text">
+            <h1>Sorting Visualizer</h1>
+            <!-- <p>Your Tagline Here</p> -->
+        </div>
+    </header>
 
-    <div class="container" id="container">
 
+    <div id="main-Content">
+
+        <div class="container" id="container">
+
+        </div>
+
+    </div>
+
+    <div class="manipulation-Section">
+        <form id="selectAlgoForm" class="selectAlgoForm">
+            <div>
+                <select name="sortingAlgorithm" id="sortingAlgorithmNameSection">
+                    <option value="bubbleSort">Bubble Sort</option>
+                    <option value="selectionSort">Selection Sort</option>
+                    <option value="insertionSort">Insertion Sort</option>
+                    <option value="quickSort">Quick Sort</option>
+                    <option value="mergeSort">Merge Sort</option>
+
+                    <!-- imp: See what happens 👉 When we select any option then its value will be attach with the name attribute which is given in "select tag" 🤩 This is an amazing concepts i have learn. -->
+
+                </select>
+            </div>
+            <button id="start-btn">Start</button>
+        </form>
+        <button id="reset-btn">Set and Reset Array Elements</button>
     </div>
 
     <!-- <div class="Sortedcontainer"></div> -->
