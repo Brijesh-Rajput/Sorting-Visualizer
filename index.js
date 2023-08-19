@@ -5,6 +5,7 @@ const resetBtn = document.querySelector("#reset-btn");
 const selectAlgoForm = document.querySelector(".selectAlgoForm");
 const secondsRange = document.querySelector("#seconds");
 const arraySizeRange = document.querySelector("#arraySize");
+const sortingAlgoName = document.querySelector("#sortingAlgoName");
 
 class SortingVisualizer {
 	static #setBarElement = function (height, color) {
@@ -284,14 +285,16 @@ setBtn.addEventListener("click", (event) => {
 });
 
 resetBtn.addEventListener("click", (event) => {
-	resetBtn.classList.add("hidden");
-	setBtn.classList.remove("hidden");
+	window.location.reload(true); // Reference 👉 https://developer.mozilla.org/en-US/docs/Web/API/Location/reload
+	// 👉 https://www.javatpoint.com/javascript-reload-method#:~:text=location.reload%20%28%29%20This%20method%20can%20have%20optional%20parameters,%28%29%20method%20reloads%20the%20page%20from%20the%20cache.
 
-	// Enabling the selectAlgoForm section
-	selectAlgoForm.classList.remove("hidden");
-
-	arr = [];
-	container.innerHTML = "";
+	// 👇 These are all for version v-1.0
+	// resetBtn.classList.add("hidden");
+	// setBtn.classList.remove("hidden");
+	// // Enabling the selectAlgoForm section
+	// selectAlgoForm.classList.remove("hidden");
+	// arr = [];
+	// container.innerHTML = "";
 });
 
 startBtn.addEventListener("click", (event) => {
@@ -324,37 +327,45 @@ startBtn.addEventListener("click", (event) => {
 		// const seconds = -10; // imp: Does negative value of seconds affects ?  Ans: If negative value passed to the setTimeout() function then it will take it as 0 milliseconds. so, minimum(least) value of setTimeout() function is 0 milliseconds.
 		console.log(sortingAlgorithm);
 		console.log(seconds);
+		resetBtn.classList.remove("hidden");
+
+		sortingAlgoName.textContent = sortingAlgorithm;
 
 		switch (sortingAlgorithm) {
 			case "bubbleSort":
 				console.log("Bubble sort Algorithm started");
-				SortingVisualizer.bubbleSort(arr, seconds).then(() => {
-					resetBtn.classList.remove("hidden");
-				});
+				SortingVisualizer.bubbleSort(arr, seconds);
+				// .then(() => {
+				// 	resetBtn.classList.remove("hidden");
+				// });
 				break;
 			case "selectionSort":
 				console.log("Selection sort Algorithm started");
-				SortingVisualizer.selectionSort(arr, seconds).then(() => {
-					resetBtn.classList.remove("hidden");
-				});
+				SortingVisualizer.selectionSort(arr, seconds);
+				// .then(() => {
+				// 	resetBtn.classList.remove("hidden");
+				// });
 				break;
 			case "insertionSort":
 				console.log("Insertion sort Algorithm started");
-				SortingVisualizer.insertionSort(arr, seconds).then(() => {
-					resetBtn.classList.remove("hidden");
-				});
+				SortingVisualizer.insertionSort(arr, seconds);
+				// .then(() => {
+				// 	resetBtn.classList.remove("hidden");
+				// });
 				break;
 			case "quickSort":
 				console.log("Quick sort Algorithm started");
-				SortingVisualizer.quickSort(arr, seconds).then(() => {
-					resetBtn.classList.remove("hidden");
-				});
+				SortingVisualizer.quickSort(arr, seconds);
+				// .then(() => {
+				// 	resetBtn.classList.remove("hidden");
+				// });
 				break;
 			case "mergeSort":
 				console.log("Merge sort Algorithm started");
-				SortingVisualizer.mergeSort(arr, seconds).then(() => {
-					resetBtn.classList.remove("hidden");
-				});
+				SortingVisualizer.mergeSort(arr, seconds);
+				// .then(() => {
+				// 	resetBtn.classList.remove("hidden");
+				// });
 				break;
 			default:
 			// We don't have to do anything

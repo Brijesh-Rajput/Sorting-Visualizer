@@ -3,6 +3,21 @@
 
 <head>
     <title>Sorting Visualizer</title>
+    <meta name="description" content="Visualizing Sorting Algorithms on an Array Elements">
+    <meta name="keywords"
+        content="MergeSort, QuickSort, InsertionSort, BubbleSort, SelectionSort, Sorting Visualization">
+    <meta name="author" content="Brijesh Rajput">
+
+    <!-- Meta tag for social media -->
+    <meta property="og:title" content="Sorting Visualizer">
+    <meta property="og:description" content="Visualizing Sorting Algorithms on an Array Elements">
+    <meta property="og:image" content="./webPageImage.jpg">
+    <meta property="og:url" content="https://sorting-visualizer-algo.netlify.app/">
+    <meta property="og:type" content="website">
+    <!-- <meta property="og:site_name" content="Example Site"> -->
+    <meta property="og:locale" content="en_US">
+
+
     <link rel="stylesheet" href="./style.css">
     <link rel="icon" href="./Logo.jpg" type="image/x-icon">
 </head>
@@ -50,7 +65,7 @@
 
                 </select>
 
-                <label> seconds: </label>
+                <label> Speed: </label>
                 <input type="range" id="seconds" name="seconds" min="0" max="0.2" value="0" step="0.0001">
 
                 <label> Array Size: </label>
@@ -60,6 +75,7 @@
             <button id="start-btn">Start</button>
         </form>
         <button id="set-btn">Set Array Elements</button>
+        <button id="sortingAlgoName"></button>
         <button id="reset-btn" class="hidden">Reset</button>
     </div>
 
